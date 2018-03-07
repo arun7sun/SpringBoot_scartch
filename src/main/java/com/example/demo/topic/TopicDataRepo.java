@@ -4,4 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TopicDataRepo extends CrudRepository<Topic, String> {
 
+	public Topic findByName(String name);
+
 }

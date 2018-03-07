@@ -36,18 +36,22 @@ public class TopicService {
 
 	// Update data for existing
 	public void updateTopic(String name, Topic data) {
-		for (int i = 0; i < topics.size(); i++) {
-			Topic t = topics.get(i);
-			if (t.getName().equals(name)) {
-				topics.set(i, data);
-				return;
-			}
-		}
+		// for (int i = 0; i < topics.size(); i++) {
+		// Topic t = topics.get(i);
+		// if (t.getName().equals(name)) {
+		// topics.set(i, data);
+		// topicdata.save(data);
+		// return;
+		// }
+		// }
+		Topic t = topicdata.findByName(name);
+		t.setDescription(data.getDescription());
+		topicdata.save(t);
 	}
 
 	// Delete one
 	public void deleteTopic(String data) {
-		//topics.removeIf(t -> t.getName().contains(data));
+		// topics.removeIf(t -> t.getName().contains(data));
 		topicdata.delete(data);
 	}
 
