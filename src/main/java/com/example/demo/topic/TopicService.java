@@ -47,7 +47,8 @@ public class TopicService {
 
 	// Delete one
 	public void deleteTopic(String data) {
-		topics.removeIf(t -> t.getName().equals(data));
+		//topics.removeIf(t -> t.getName().contains(data));
+		topicdata.delete(data);
 	}
 
 }
